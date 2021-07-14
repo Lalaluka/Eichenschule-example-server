@@ -1,0 +1,55 @@
+<html>
+
+  <head>
+    <title>Example Server</title>
+    <link rel="stylesheet" href="public/scale-components/scale-components.css" />
+    <script type="module" src="public/scale-components/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="public/index.css" />
+  </head>
+
+  <body>
+    <header>
+      Beispiel Website von einem Server
+    </header>
+    <main>
+      <h1>Hallo Eichenschule!</h1>
+      <div>
+        Hier ist die kleine Website, welche auf einem http-server auf meinem Tablet liegt.
+        <br />
+        <br />
+        Diese Domain hast du aufgerufen <span id="domain"></span>
+        <script>
+          document.getElementById("domain").innerHTML = window.location.host
+        </script>
+        <br />
+        <br />
+      </div>
+
+      <scale-button id="button">Hier ist ein Button mit etwas Javascript</scale-button>
+      <scale-modal id="modal-default" heading="Hier die Dateien die von dem Server runtergeladen wurden">
+
+        <scale-list>
+          <scale-list-item><a href="/index.html">Index HTML Datei</a></scale-list-item>
+          <scale-list-item><a href="/public/index.css">Index.css Datei</a></scale-list-item>
+          <scale-list-item><a href="/public/scale-components/scale-components.esm.js">Scale Components js</a></scale-list-item>
+          <scale-list-item><a href="/public/scale-components/scale-components.css">Scale Components css</a></scale-list-item>
+          <scale-list-item>Und mehrere Javascript Chunks</scale-list-item>
+        </scale-list>
+
+        Klickt auf die Links um auf die spezifischen Dateien zukommen
+      </scale-modal>
+      <script>
+        const showModal = document.querySelector('#button');
+        const modal = document.getElementById('modal-default');
+        showModal.addEventListener('click', () => {
+          modal.setAttribute('opened', 'true');
+        });
+
+        modal.addEventListener('scaleClose', () => {
+          modal.removeAttribute('opened');
+        });
+      </script>
+    </main>
+  </body>
+
+</html>

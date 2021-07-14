@@ -1,0 +1,15 @@
+body {
+  margin: 0px;
+  font-family: Helvetica, Sans-Serif;
+  font-size: 20px;
+  background-color: #FAFAFA;
+}
+header {
+  padding: 10px;
+  width: 100%;
+  background-color: var(--scl-color-orange-80);
+  color: #FAFAFA;
+}
+main {
+  padding: 10px;
+}

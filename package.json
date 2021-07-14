@@ -1,0 +1,26 @@
+{
+  "name": "eichenschule-example-server",
+  "version": "1.0.0",
+  "description": "Example Server used at a Presentation at Eichenschule Scheeßel",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "rimraf src/public/scale-components && cp -R node_modules/@telekom/scale-components-neutral/dist/scale-components/ src/public/scale-components",
+    "start": "http-server -c-1 ./src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lalaluka/Eichenschule-example-server.git"
+  },
+  "author": "Calvin Schröder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lalaluka/Eichenschule-example-server/issues"
+  },
+  "homepage": "https://github.com/Lalaluka/Eichenschule-example-server#readme",
+  "dependencies": {
+    "@telekom/scale-components-neutral": "^3.0.0-beta.15",
+    "http-server": "^0.12.3",
+    "rimraf": "^3.0.2"
+  }
+}
